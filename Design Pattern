@@ -1,0 +1,79 @@
+1)
+//inside an object 
+this.obj1 ={
+    myname : 'john'
+};
+let obj2 ={
+    myname : 'rohan'
+};
+console.log(this.obj1.myname);
+console.log(obj2.myname);
+
+
+//inside an method
+let obj2 ={
+    myname : 'rohan',
+    myname2(){
+        console.log(`my name is ${this.myname }`)
+    }
+    obj2.myname2();
+    
+2)    
+//"this"inside a function ('this' is in global scope , using constructors)
+this.name = "window name";
+
+const myWindows = function(){
+    console.log(`my new ${this.name}`);
+};
+myWindows()
+
+3)
+const student = function(name,age,phonenumber,boardmarks){
+    this.name = name,
+    this.age  = age,
+    this.phonenumber = phonenumber,
+    this.boardmarks = boardmarks,
+    students = ()=>{
+        console.log(`my name is ${this.name} and my age is ${this.age} my phone number is ${this.phonenumber} and this is my board marks ${this.boardmarks}`);
+    }
+}
+var x =new student('john',34,1234567,89);
+console.log(students());
+
+4)
+class studentTest{
+    constructor(boardmarks){
+        this.boardmarks = boardmarks;
+    }
+    eligibility(){
+        if(this.boardmarks >= 40){
+            return 'eligible';
+        }
+        else{
+            return 'not eligible'
+        }
+    }
+}
+var student = new studentTest(39)
+console.log(student.eligibility())
+
+
+
+5)
+class students{
+    constructor(name,age){
+        this.name= name;
+        this.age = age;
+    }
+}
+const students1 = new students('john',23);
+const students2 = new students('rahul',21);
+const students3 = new students('raj',24);
+const students4 = new students('das',20);
+const students5 = new students('nayan',19);
+
+console.log(students1)
+console.log(students2)
+console.log(students3)
+console.log(students4)
+console.log(students5)
